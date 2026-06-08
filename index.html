@@ -26,8 +26,8 @@
 <meta name="twitter:title" content="ALEXIUM — Estudio Creativo Premium" />
 <meta name="twitter:description" content="Logos · Web · Videos · Motion · Branding · UGC — Santiago, RD." />
 
-<!-- FAVICON  —  SWAP href con tu logo PNG cuando lo subas. -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b1c'/%3E%3Cpath d='M50 12 C46 28 30 64 16 90 C15 93 18 95 22 93 C32 78 41 58 50 42 C59 58 68 78 78 93 C82 95 85 93 84 90 C70 64 54 28 50 12 Z M34 66 L66 66 L62 58 L38 58 Z' fill='%23C9A84C'/%3E%3C/svg%3E" />
+<!-- FAVICON desde el logo real -->
+<link rel="icon" type="image/png" href="logo.png" />
 
 <!-- Google Fonts: Cormorant Garamond (display) + Inter (body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,8 +59,14 @@
   --gold-light:#FAC775;
   --cream:#f6f0df;
 
+  /* Morado (acento secundario, para dar color sin recargar) */
+  --purple:#7F77DD;
+  --purple-deep:#5b53b8;
+  --purple-soft:#efeefb;
+
   --grad-gold:linear-gradient(135deg,#FAC775 0%,#C9A84C 55%,#a8862f 100%);
   --grad-gold-text:linear-gradient(120deg,#a8862f,#C9A84C 55%,#9c7c2c);
+  --grad-purple:linear-gradient(135deg,#9a92e8,#7F77DD 55%,#5b53b8);
 
   --font-display:"Cormorant Garamond",Georgia,serif;
   --font-body:"Inter",system-ui,-apple-system,sans-serif;
@@ -128,12 +134,15 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
    4.  PAGE LOADER  (blanco minimal)
    ============================================================ */
 #loader{
-  position:fixed;inset:0;z-index:9999;background:var(--bg);
+  position:fixed;inset:0;z-index:9999;
+  background:
+    radial-gradient(60% 50% at 30% 25%,rgba(127,119,221,.35),transparent 60%),
+    radial-gradient(55% 45% at 75% 80%,rgba(201,168,76,.28),transparent 60%),
+    linear-gradient(160deg,#16162f,#0b0b1c 70%);
   display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s var(--ease);
 }
 #loader.done{opacity:0;visibility:hidden}
-.loader-A{width:84px;height:84px;opacity:0;animation:loaderPulse 1.6s var(--ease) forwards}
-.loader-A path{fill:url(#goldGrad)}
+.loader-A{width:120px;height:auto;border-radius:18px;opacity:0;animation:loaderPulse 1.6s var(--ease) forwards;box-shadow:0 0 50px rgba(127,119,221,.35),0 0 90px rgba(201,168,76,.2)}
 @keyframes loaderPulse{
   0%{opacity:0;transform:scale(.7)}
   35%{opacity:1;transform:scale(1.08)}
@@ -171,6 +180,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-size:1.4rem;letter-spacing:.18em}
 .brand svg{width:32px;height:32px}
+.brand-logo{width:38px;height:38px;border-radius:9px;object-fit:cover;box-shadow:0 2px 10px rgba(20,20,44,.18)}
 .brand span{background:var(--grad-gold-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
 .nav-links{display:flex;gap:32px;align-items:center}
@@ -312,7 +322,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
   font-family:var(--font-display);font-size:1.4rem;letter-spacing:.14em;
   color:var(--ink);padding:0 10px;
 }
-.marquee .dot{color:var(--gold);font-size:1.1rem}
+.marquee .dot{color:var(--purple);font-size:1.1rem}
 @keyframes scrollX{to{transform:translateX(-50%)}}
 
 /* ============================================================
@@ -320,6 +330,25 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
    ============================================================ */
 .section{padding-block:var(--section-pad)}
 .section.alt{background:var(--surface)}
+/* Secciones oscuras con color (morado + dorado) para dar ritmo y riqueza */
+.section.dark{
+  background-color:#0d0d22;color:#fff;
+  background-image:
+    radial-gradient(65% 55% at 12% 0%,rgba(127,119,221,.22),transparent 55%),
+    radial-gradient(60% 55% at 92% 100%,rgba(201,168,76,.14),transparent 55%);
+}
+.section.dark .section-title,.section.dark h3,.section.dark h4{color:#fff}
+.section.dark .eyebrow{color:var(--gold-light)}
+.section.dark .filter-btn{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.78)}
+.section.dark .filter-btn.active,.section.dark .filter-btn:hover{background:var(--grad-gold);color:#fff;border-color:transparent}
+.section.dark .work{border-color:rgba(255,255,255,.1)}
+.section.dark .t-card p{color:#fff}
+.section.dark .t-card .who{color:var(--gold-light)}
+.section.dark .t-card .role{color:rgba(255,255,255,.6)}
+.section.dark .t-dots button{background:rgba(255,255,255,.22)}
+.section.dark .t-dots button.active{background:var(--gold)}
+/* Lavado morado sutil en Servicios para romper el blanco */
+#servicios{background:radial-gradient(55% 45% at 100% 0%,var(--purple-soft),transparent 60%)}
 .reveal{opacity:0;transform:translateY(38px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .stagger > *{opacity:0;transform:translateY(34px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -347,7 +376,8 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 .flip-front{align-items:flex-start;justify-content:center;gap:16px}
 .flip-front .ico{
   width:58px;height:58px;border-radius:14px;display:grid;place-items:center;
-  background:var(--surface-2);border:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(127,119,221,.18),rgba(201,168,76,.15));
+  border:1px solid rgba(127,119,221,.3);
 }
 .flip-front .ico svg{width:28px;height:28px;stroke:var(--gold-deep)}
 .flip-front h3{font-size:1.5rem;color:var(--ink)}
@@ -386,8 +416,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 }
 .work.hide{opacity:0;transform:scale(.85);position:absolute;pointer-events:none;width:0;height:0;padding:0;margin:0;border:0;overflow:hidden}
 .work:hover{box-shadow:0 18px 40px rgba(20,20,44,.16)}
-.work .ph{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 30% 22%,#20203f,#0c0c1e 75%)}
-.work .ph svg{width:40%;opacity:.55}
+.work .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#12122a}
 .work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .work .overlay{
   position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
@@ -404,9 +433,10 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
    12.  ABOUT
    ============================================================ */
 .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
-.about-visual{display:grid;place-items:center;min-height:320px;perspective:900px}
-.about-A{width:220px;height:220px;animation:spinY 9s ease-in-out infinite;transform-style:preserve-3d;filter:drop-shadow(0 22px 44px rgba(201,168,76,.22))}
-.about-A path{fill:url(#goldGrad)}
+.about-visual{position:relative;display:grid;place-items:center;min-height:320px;perspective:900px}
+.about-visual::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(127,119,221,.35),rgba(201,168,76,.18) 55%,transparent 72%);filter:blur(8px)}
+.about-A{position:relative;width:min(300px,80%);height:auto;border-radius:20px;animation:spinY 9s ease-in-out infinite;transform-style:preserve-3d;box-shadow:0 26px 55px rgba(20,20,44,.4),0 0 0 1px rgba(201,168,76,.25)}
 @keyframes spinY{0%,100%{transform:rotateY(-18deg) rotateX(6deg)}50%{transform:rotateY(18deg) rotateX(-4deg)}}
 .about-text h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:18px}
 .about-text p{color:var(--ink-soft);margin-bottom:16px;max-width:54ch}
@@ -424,7 +454,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
   transition:transform .45s var(--ease),box-shadow .45s,border-color .45s;
 }
 .pkg:hover{transform:translateY(-10px);box-shadow:0 22px 48px rgba(20,20,44,.14);border-color:var(--gold)}
-.pkg.featured{border-color:var(--gold);border-width:1.5px;position:relative;box-shadow:0 18px 44px rgba(201,168,76,.2)}
+.pkg.featured{border-color:var(--gold);border-width:1.5px;position:relative;background:linear-gradient(180deg,var(--purple-soft),#fff 55%);box-shadow:0 20px 48px rgba(127,119,221,.22)}
 .pkg.featured::after{content:"Más popular";position:absolute;top:18px;right:18px;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--grad-gold);padding:5px 12px;border-radius:50px;font-weight:600}
 .pkg h3{font-size:1.6rem;color:var(--ink);margin-bottom:4px}
 .pkg .price{font-family:var(--font-display);font-size:2.5rem;color:var(--gold-deep);margin:12px 0 2px}
@@ -558,7 +588,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 
 <!-- ============================ LOADER ============================ -->
 <div id="loader" aria-hidden="true">
-  <svg class="loader-A" viewBox="0 0 100 100"><use href="#logoA"/></svg>
+  <img class="loader-A" src="logo.png" alt="ALEXIUM" />
 </div>
 
 <!-- ===================== CURSOR ===================== -->
@@ -572,8 +602,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#inicio" class="brand magnetic" aria-label="ALEXIUM inicio">
-      <!-- SWAP: reemplaza este <svg> por <img src="logo.png" alt="ALEXIUM"> -->
-      <svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg>
+      <img class="brand-logo" src="logo.png" alt="ALEXIUM logo" />
       <span>ALEXIUM</span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -614,7 +643,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
   <div class="shape s3" data-speed="0.16"></div>
 
   <div class="hero-content">
-    <h1 id="typed" data-text="Estudio creativo para marcas que se niegan a pasar desapercibidas"></h1>
     <p class="sub">Logos · Web · Videos · Motion · Branding · UGC — Santiago, RD</p>
     <div class="hero-ctas">
       <a href="#portafolio" class="btn btn-gold magnetic">Ver Proyectos</a>
@@ -639,7 +667,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 <section class="section" id="servicios">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Lo que hacemos</span>
       <h2 class="section-title">Nuestros Servicios<span class="title-underline"></span></h2>
     </div>
     <div class="services-grid reveal stagger">
@@ -667,19 +694,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
           <h4>Diseño Web</h4>
           <p>Páginas web y landings rápidas, responsivas y elegantes. Tu marca online con la misma calidad premium.</p>
           <span class="tag">Sitios · Landings · Responsive</span>
-        </div>
-      </div></div>
-
-      <div class="flip"><div class="flip-inner">
-        <div class="flip-face flip-front">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2"/></svg></div>
-          <h3>Producción de Video</h3>
-          <span class="hint">Hover para ver más</span>
-        </div>
-        <div class="flip-face flip-back">
-          <h4>Producción de Video</h4>
-          <p>De la idea al render final: guion, rodaje y edición cinematográfica para reels, anuncios y piezas de marca.</p>
-          <span class="tag">Reels · Ads · Corporativo</span>
         </div>
       </div></div>
 
@@ -740,10 +754,9 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 </section>
 
 <!-- ========================= PORTFOLIO ========================= -->
-<section class="section alt" id="portafolio">
+<section class="section dark" id="portafolio">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Trabajo seleccionado</span>
       <h2 class="section-title">Portafolio<span class="title-underline"></span></h2>
     </div>
 
@@ -757,27 +770,27 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
     <div class="portfolio-grid reveal stagger" id="portfolioGrid">
       <!-- SWAP cada .ph por <img src="work1.jpg" loading="lazy" alt="..."> -->
       <article class="work" data-cat="logos">
-        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <img class="ph" src="logo.png" alt="" loading="lazy" />
         <div class="overlay"><span class="cat">Logos</span><h3>Identidad Áurea</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
       </article>
       <article class="work" data-cat="videos">
-        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <img class="ph" src="logo.png" alt="" loading="lazy" />
         <div class="overlay"><span class="cat">Videos</span><h3>Reel de Campaña</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
       </article>
       <article class="work" data-cat="branding">
-        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <img class="ph" src="logo.png" alt="" loading="lazy" />
         <div class="overlay"><span class="cat">Branding</span><h3>Sistema Visual Noir</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
       </article>
       <article class="work" data-cat="branding">
-        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <img class="ph" src="logo.png" alt="" loading="lazy" />
         <div class="overlay"><span class="cat">Branding</span><h3>Rediseño Premium</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
       </article>
       <article class="work" data-cat="logos">
-        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <img class="ph" src="logo.png" alt="" loading="lazy" />
         <div class="overlay"><span class="cat">Logos</span><h3>Marca Monograma</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
       </article>
       <article class="work" data-cat="videos">
-        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <img class="ph" src="logo.png" alt="" loading="lazy" />
         <div class="overlay"><span class="cat">Videos</span><h3>Motion Reel 2026</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
       </article>
     </div>
@@ -788,7 +801,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 <section class="section" id="nosotros">
   <div class="container about-grid">
     <div class="about-visual reveal">
-      <svg class="about-A" viewBox="0 0 100 100"><use href="#logoA"/></svg>
+      <img class="about-A" src="logo.png" alt="ALEXIUM logo" />
     </div>
     <div class="about-text reveal">
       <span class="eyebrow">Quiénes somos</span>
@@ -808,7 +821,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 <section class="section alt" id="paquetes">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Inversión</span>
       <h2 class="section-title">Paquetes<span class="title-underline"></span></h2>
     </div>
     <div class="pkg-grid reveal stagger">
@@ -856,10 +868,9 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 </section>
 
 <!-- ========================= TESTIMONIALS ========================= -->
-<section class="section">
+<section class="section dark">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Lo que dicen</span>
       <h2 class="section-title">Testimonios<span class="title-underline"></span></h2>
     </div>
     <div class="t-viewport reveal" id="tCarousel">
@@ -941,7 +952,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 <footer class="footer">
   <div class="container">
     <a href="#inicio" class="brand">
-      <svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg>
+      <img class="brand-logo" src="logo.png" alt="ALEXIUM logo" />
       <span>ALEXIUM</span>
     </a>
     <nav class="footer-nav">
@@ -1071,7 +1082,9 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 
   /* 8. TYPING */
   function startTyping(){
-    const el=document.getElementById("typed"),text=el.dataset.text;
+    const el=document.getElementById("typed");
+    if(!el)return;                 // el titular del hero fue removido
+    const text=el.dataset.text;
     if(prefersReduced){el.textContent=text;return;}
     let i=0;el.innerHTML='<span class="typed-caret">|</span>';
     (function type(){
