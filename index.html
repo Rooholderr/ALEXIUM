@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================
+     SEO & META  —  edita la copia / URLs a tu dominio real
+     ============================================================ -->
+<title>ALEXIUM — Estudio Creativo Premium | Santiago, RD</title>
+<meta name="description" content="ALEXIUM es un estudio creativo premium en Santiago, República Dominicana. Branding, diseño web, producción de video, motion graphics, logos y contenido para redes (UGC)." />
+<meta name="keywords" content="branding, diseño web, páginas web, motion graphics, logos, video, UGC, estudio creativo, Santiago, República Dominicana, ALEXIUM" />
+<meta name="author" content="ALEXIUM" />
+<meta name="theme-color" content="#0b0b1c" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ALEXIUM — Estudio Creativo Premium" />
+<meta property="og:description" content="Estudio creativo para marcas que se niegan a pasar desapercibidas. Logos · Web · Videos · Motion · Branding · UGC — Santiago, RD." />
+<meta property="og:locale" content="es_DO" />
+<meta property="og:image" content="og-image.jpg" />
+<meta property="og:url" content="https://alexium.do" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ALEXIUM — Estudio Creativo Premium" />
+<meta name="twitter:description" content="Logos · Web · Videos · Motion · Branding · UGC — Santiago, RD." />
+
+<!-- FAVICON  —  SWAP href con tu logo PNG cuando lo subas. -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b1c'/%3E%3Cpath d='M50 12 C46 28 30 64 16 90 C15 93 18 95 22 93 C32 78 41 58 50 42 C59 58 68 78 78 93 C82 95 85 93 84 90 C70 64 54 28 50 12 Z M34 66 L66 66 L62 58 L38 58 Z' fill='%23C9A84C'/%3E%3C/svg%3E" />
+
+<!-- Google Fonts: Cormorant Garamond (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   1.  DESIGN TOKENS  —  paleta clara y elegante (Apple / LV)
+       Fondo blanco · texto navy · dorado como acento sutil
+   ============================================================ */
+:root{
+  /* Oscuros (solo hero + footer, para drama puntual) */
+  --navy-900:#0b0b1c;
+  --navy-800:#14142c;
+  --navy-700:#20203f;
+
+  /* Claros (la mayoría del sitio) */
+  --bg:#ffffff;
+  --surface:#faf8f2;     /* off-white cálido */
+  --surface-2:#f2ecde;   /* crema suave */
+  --line:#e9e3d3;        /* hairline en claro */
+  --ink:#17172e;         /* texto principal sobre claro */
+  --ink-soft:#5d5b73;    /* texto secundario */
+
+  /* Dorado */
+  --gold:#C9A84C;
+  --gold-deep:#9c7c2c;   /* dorado con contraste para texto sobre blanco */
+  --gold-light:#FAC775;
+  --cream:#f6f0df;
+
+  --grad-gold:linear-gradient(135deg,#FAC775 0%,#C9A84C 55%,#a8862f 100%);
+  --grad-gold-text:linear-gradient(120deg,#a8862f,#C9A84C 55%,#9c7c2c);
+
+  --font-display:"Cormorant Garamond",Georgia,serif;
+  --font-body:"Inter",system-ui,-apple-system,sans-serif;
+
+  --container:1180px;
+  --radius:16px;
+  --radius-sm:12px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --section-pad:clamp(70px,10vw,130px);
+}
+
+/* ============================================================
+   2.  RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+section{position:relative}
+
+@media (hover:hover) and (pointer:fine){
+  body{cursor:none}
+  a,button,.magnetic{cursor:none}
+}
+::selection{background:var(--gold);color:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px}
+
+/* ============================================================
+   3.  TIPOGRAFÍA
+   ============================================================ */
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;letter-spacing:.4px;color:var(--ink)}
+.text-gold{
+  background:var(--grad-gold-text);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.7rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold-deep);display:inline-block;margin-bottom:16px;
+}
+.container{width:min(100% - 44px,var(--container));margin-inline:auto}
+
+.section-title{font-size:clamp(2.2rem,5vw,3.5rem);text-align:center;position:relative;display:inline-block}
+.section-head{text-align:center;margin-bottom:58px}
+.title-underline{
+  display:block;height:2px;width:0;margin:16px auto 0;
+  background:var(--grad-gold);border-radius:2px;transition:width 1s var(--ease) .15s;
+}
+.reveal.in .title-underline{width:80px}
+
+/* ============================================================
+   4.  PAGE LOADER  (blanco minimal)
+   ============================================================ */
+#loader{
+  position:fixed;inset:0;z-index:9999;background:var(--bg);
+  display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s var(--ease);
+}
+#loader.done{opacity:0;visibility:hidden}
+.loader-A{width:84px;height:84px;opacity:0;animation:loaderPulse 1.6s var(--ease) forwards}
+.loader-A path{fill:url(#goldGrad)}
+@keyframes loaderPulse{
+  0%{opacity:0;transform:scale(.7)}
+  35%{opacity:1;transform:scale(1.08)}
+  55%{transform:scale(1)}
+  100%{opacity:1;transform:scale(1)}
+}
+
+/* ============================================================
+   5.  CUSTOM CURSOR
+   ============================================================ */
+.cursor-dot,.cursor-ring{
+  position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);will-change:transform;
+}
+.cursor-dot{width:7px;height:7px;background:var(--gold-deep)}
+.cursor-ring{
+  width:34px;height:34px;border:1.5px solid rgba(156,124,44,.55);
+  transition:width .25s var(--ease),height .25s var(--ease),background .25s,border-color .25s;
+}
+.cursor-ring.hover{width:58px;height:58px;background:rgba(201,168,76,.1);border-color:var(--gold)}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+
+/* ============================================================
+   6.  NAVBAR  (transparente sobre hero oscuro → blanco al hacer scroll)
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;width:100%;z-index:900;
+  padding:22px 0;transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(255,255,255,.85);backdrop-filter:blur(14px);
+  padding:13px 0;box-shadow:0 8px 30px rgba(20,20,44,.08);border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-size:1.4rem;letter-spacing:.18em}
+.brand svg{width:32px;height:32px}
+.brand span{background:var(--grad-gold-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{
+  position:relative;font-size:.9rem;font-weight:500;color:rgba(255,255,255,.8);
+  letter-spacing:.03em;transition:color .3s;padding:4px 0;
+}
+.nav.scrolled .nav-links a{color:var(--ink-soft)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--grad-gold);transition:width .35s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav.scrolled .nav-links a:hover,.nav.scrolled .nav-links a.active{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 30px;border-radius:50px;font-size:.82rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;transition:transform .25s var(--ease),box-shadow .35s,background .35s,color .35s;
+  will-change:transform;white-space:nowrap;
+}
+.btn-gold{background:var(--grad-gold);color:#fff;box-shadow:0 8px 22px rgba(201,168,76,.28)}
+.btn-gold:hover{box-shadow:0 12px 30px rgba(201,168,76,.42)}
+.btn-outline{border:1.5px solid var(--gold);color:var(--gold-deep);background:transparent}
+.btn-outline:hover{background:var(--gold);color:#fff}
+/* En el hero oscuro, el outline va en dorado claro */
+.hero .btn-outline{color:var(--gold-light);border-color:var(--gold)}
+.hero .btn-outline:hover{background:var(--gold);color:#fff}
+.nav .nav-cta{padding:10px 22px;font-size:.74rem}
+.nav:not(.scrolled) .nav-cta{color:#fff;border-color:rgba(255,255,255,.6)}
+.nav:not(.scrolled) .nav-cta:hover{background:#fff;color:var(--navy-900);border-color:#fff}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:6px;width:32px;height:22px;justify-content:center;z-index:950}
+.hamburger span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:transform .4s var(--ease),opacity .3s,background .3s}
+.nav.scrolled .hamburger span{background:var(--ink)}
+.hamburger.open span{background:var(--ink)}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Mobile menu (overlay blanco) */
+.mobile-menu{
+  position:fixed;inset:0;z-index:940;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s var(--ease);
+}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu a{
+  font-family:var(--font-display);font-size:2rem;color:var(--ink);padding:8px;
+  opacity:0;transform:translateY(22px);transition:opacity .5s var(--ease),transform .5s var(--ease),color .3s;
+}
+.mobile-menu.open a{opacity:1;transform:translateY(0)}
+.mobile-menu a:hover{color:var(--gold-deep)}
+.mobile-menu a:nth-child(1){transition-delay:.08s}
+.mobile-menu a:nth-child(2){transition-delay:.13s}
+.mobile-menu a:nth-child(3){transition-delay:.18s}
+.mobile-menu a:nth-child(4){transition-delay:.23s}
+.mobile-menu a:nth-child(5){transition-delay:.28s}
+.mobile-menu a:nth-child(6){transition-delay:.33s}
+.mobile-menu .btn{transition-delay:.4s;margin-top:16px;color:#fff}
+
+/* ============================================================
+   7.  HERO  (navy sobrio, dorado, sin morado recargado)
+   ============================================================ */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:150px 22px 90px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(80% 60% at 50% 0%,#1a1a38 0%,transparent 60%),
+    radial-gradient(70% 60% at 50% 120%,rgba(201,168,76,.10),transparent 60%),
+    var(--navy-900);
+  color:#fff;
+}
+/* Patrón geométrico muy tenue (navy sobre navy) */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:
+    linear-gradient(135deg,rgba(255,255,255,.022) 25%,transparent 25%),
+    linear-gradient(225deg,rgba(255,255,255,.022) 25%,transparent 25%);
+  background-size:140px 140px;background-position:0 0,70px 0;will-change:transform;
+}
+#particles{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+.shape{position:absolute;z-index:1;border:1px solid rgba(201,168,76,.12);will-change:transform}
+.shape.s1{width:340px;height:340px;border-radius:50%;top:8%;left:-90px;animation:float1 20s ease-in-out infinite}
+.shape.s2{width:200px;height:200px;top:62%;right:-40px;transform:rotate(45deg);animation:float2 24s ease-in-out infinite}
+.shape.s3{width:120px;height:120px;border-radius:50%;bottom:14%;left:12%;animation:float1 16s ease-in-out infinite reverse}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-36px) rotate(16deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(30px) rotate(70deg)}}
+
+.hero-content{position:relative;z-index:3;max-width:880px}
+
+.hero-logo{
+  width:min(360px,68vw);aspect-ratio:1/1;margin:0 auto 34px;border-radius:24px;
+  position:relative;display:grid;place-items:center;overflow:hidden;
+  box-shadow:0 0 50px rgba(201,168,76,.18);animation:glowPulse 5s ease-in-out infinite;
+}
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 40px rgba(201,168,76,.14)}
+  50%{box-shadow:0 0 70px rgba(201,168,76,.28)}
+}
+.hero-logo video{width:100%;height:100%;object-fit:cover}
+.hero-logo .logo-placeholder{
+  width:100%;height:100%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 38%,#1c1c3a,#0c0c1e 72%);
+}
+.hero-logo .logo-placeholder svg{width:52%;height:52%;filter:drop-shadow(0 8px 22px rgba(201,168,76,.35))}
+
+.hero h1{
+  font-size:clamp(2.1rem,6vw,4.2rem);font-weight:600;margin-bottom:18px;
+  letter-spacing:.5px;min-height:1.1em;color:#fff;
+}
+.typed-caret{color:var(--gold-light);font-weight:300;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .sub{
+  font-size:clamp(1rem,2.4vw,1.25rem);color:var(--gold-light);font-weight:300;
+  letter-spacing:.06em;margin-bottom:38px;opacity:.95;
+}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+.scroll-cue{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;
+  display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.55);
+  font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
+}
+.scroll-cue .arrow{width:20px;height:20px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);animation:bounce 1.8s infinite}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.4}50%{transform:rotate(45deg) translate(5px,5px);opacity:1}}
+
+/* ============================================================
+   8.  MARQUEE  (claro, elegante)
+   ============================================================ */
+.marquee{
+  background:var(--surface);border-block:1px solid var(--line);
+  padding:18px 0;overflow:hidden;white-space:nowrap;
+}
+.marquee-track{display:inline-flex;align-items:center;animation:scrollX 30s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{
+  font-family:var(--font-display);font-size:1.4rem;letter-spacing:.14em;
+  color:var(--ink);padding:0 10px;
+}
+.marquee .dot{color:var(--gold);font-size:1.1rem}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   9.  SECTION SHELL & REVEAL
+   ============================================================ */
+.section{padding-block:var(--section-pad)}
+.section.alt{background:var(--surface)}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger > *{opacity:0;transform:translateY(34px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.stagger.in > *{opacity:1;transform:none}
+.stagger.in > *:nth-child(1){transition-delay:.05s}
+.stagger.in > *:nth-child(2){transition-delay:.12s}
+.stagger.in > *:nth-child(3){transition-delay:.19s}
+.stagger.in > *:nth-child(4){transition-delay:.26s}
+.stagger.in > *:nth-child(5){transition-delay:.33s}
+.stagger.in > *:nth-child(6){transition-delay:.40s}
+.stagger.in > *:nth-child(7){transition-delay:.47s}
+
+/* ============================================================
+   10.  SERVICES (flip cards claras)
+   ============================================================ */
+.services-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+.flip{perspective:1400px;height:280px;flex:1 1 300px;max-width:355px}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .8s var(--ease);transform-style:preserve-3d}
+.flip:hover .flip-inner{transform:rotateY(180deg)}
+.flip-face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);
+  padding:32px 28px;display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid var(--line);background:#fff;box-shadow:0 6px 24px rgba(20,20,44,.05);
+}
+.flip-front{align-items:flex-start;justify-content:center;gap:16px}
+.flip-front .ico{
+  width:58px;height:58px;border-radius:14px;display:grid;place-items:center;
+  background:var(--surface-2);border:1px solid var(--line);
+}
+.flip-front .ico svg{width:28px;height:28px;stroke:var(--gold-deep)}
+.flip-front h3{font-size:1.5rem;color:var(--ink)}
+.flip-front .hint{font-size:.72rem;color:var(--ink-soft);letter-spacing:.18em;text-transform:uppercase;margin-top:auto;opacity:.7}
+.flip-back{
+  transform:rotateY(180deg);justify-content:center;
+  background:linear-gradient(160deg,var(--navy-800),var(--navy-900));border-color:var(--navy-700);
+}
+.flip-back h4{color:var(--gold-light);font-size:1.35rem;margin-bottom:10px}
+.flip-back p{font-size:.9rem;color:rgba(255,255,255,.82)}
+.flip-back .tag{margin-top:16px;font-size:.76rem;color:var(--gold);letter-spacing:.1em}
+/* Trazo dorado en hover */
+.flip-front::before{
+  content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1.5px;
+  background:linear-gradient(120deg,transparent,var(--gold),transparent);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s;
+}
+.flip:hover .flip-front::before{opacity:1;animation:trace 1.4s linear infinite}
+@keyframes trace{to{transform:rotate(360deg)}}
+
+/* ============================================================
+   11.  PORTFOLIO
+   ============================================================ */
+.filters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.filter-btn{
+  padding:9px 22px;border-radius:50px;font-size:.82rem;font-weight:500;letter-spacing:.04em;
+  border:1px solid var(--line);color:var(--ink-soft);background:#fff;transition:all .3s var(--ease);
+}
+.filter-btn.active,.filter-btn:hover{background:var(--grad-gold);color:#fff;border-color:transparent}
+
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.work{
+  position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;
+  border:1px solid var(--line);transition:transform .5s var(--ease),opacity .5s var(--ease),box-shadow .4s;
+}
+.work.hide{opacity:0;transform:scale(.85);position:absolute;pointer-events:none;width:0;height:0;padding:0;margin:0;border:0;overflow:hidden}
+.work:hover{box-shadow:0 18px 40px rgba(20,20,44,.16)}
+.work .ph{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 30% 22%,#20203f,#0c0c1e 75%)}
+.work .ph svg{width:40%;opacity:.55}
+.work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.work .overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px;background:linear-gradient(to top,rgba(11,11,28,.94),rgba(11,11,28,.15) 58%,transparent);
+  transform:translateY(101%);transition:transform .5s var(--ease);
+}
+.work:hover .overlay{transform:translateY(0)}
+.work .overlay .cat{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light)}
+.work .overlay h3{font-size:1.45rem;color:#fff;margin:4px 0 14px}
+.work .overlay .mini{align-self:flex-start;padding:8px 18px;font-size:.72rem;border:1px solid var(--gold);border-radius:50px;color:var(--gold-light);transition:background .3s,color .3s}
+.work .overlay .mini:hover{background:var(--gold);color:#fff}
+
+/* ============================================================
+   12.  ABOUT
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.about-visual{display:grid;place-items:center;min-height:320px;perspective:900px}
+.about-A{width:220px;height:220px;animation:spinY 9s ease-in-out infinite;transform-style:preserve-3d;filter:drop-shadow(0 22px 44px rgba(201,168,76,.22))}
+.about-A path{fill:url(#goldGrad)}
+@keyframes spinY{0%,100%{transform:rotateY(-18deg) rotateX(6deg)}50%{transform:rotateY(18deg) rotateX(-4deg)}}
+.about-text h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:18px}
+.about-text p{color:var(--ink-soft);margin-bottom:16px;max-width:54ch}
+.counters{display:flex;gap:36px;margin-top:32px;flex-wrap:wrap}
+.counter .num{font-family:var(--font-display);font-size:2.9rem;line-height:1;color:var(--gold-deep)}
+.counter .lbl{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+
+/* ============================================================
+   13.  PACKAGES
+   ============================================================ */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pkg{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:42px 32px;display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(20,20,44,.05);
+  transition:transform .45s var(--ease),box-shadow .45s,border-color .45s;
+}
+.pkg:hover{transform:translateY(-10px);box-shadow:0 22px 48px rgba(20,20,44,.14);border-color:var(--gold)}
+.pkg.featured{border-color:var(--gold);border-width:1.5px;position:relative;box-shadow:0 18px 44px rgba(201,168,76,.2)}
+.pkg.featured::after{content:"Más popular";position:absolute;top:18px;right:18px;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--grad-gold);padding:5px 12px;border-radius:50px;font-weight:600}
+.pkg h3{font-size:1.6rem;color:var(--ink);margin-bottom:4px}
+.pkg .price{font-family:var(--font-display);font-size:2.5rem;color:var(--gold-deep);margin:12px 0 2px}
+.pkg .price small{font-size:.9rem;color:var(--ink-soft);font-family:var(--font-body)}
+.pkg ul{margin:22px 0 28px;display:flex;flex-direction:column;gap:11px}
+.pkg li{display:flex;gap:10px;font-size:.9rem;color:var(--ink)}
+.pkg li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--surface-2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239c7c2c' stroke-width='3'%3E%3Cpath d='M5 12l4 4L19 7'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
+.pkg .btn{margin-top:auto;width:100%}
+
+/* ============================================================
+   14.  TESTIMONIALS
+   ============================================================ */
+.t-viewport{max-width:740px;margin-inline:auto;position:relative;min-height:230px}
+.t-card{position:absolute;inset:0;text-align:center;padding:36px 26px;opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);pointer-events:none}
+.t-card.active{opacity:1;transform:none;pointer-events:auto;position:relative}
+.t-card .quote{font-family:var(--font-display);font-size:4.5rem;line-height:.4;color:var(--gold);opacity:.45}
+.t-card p{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.85rem);color:var(--ink);font-style:italic;margin:8px 0 22px}
+.t-card .who{font-weight:600;color:var(--gold-deep)}
+.t-card .role{font-size:.82rem;color:var(--ink-soft);letter-spacing:.06em}
+.t-dots{display:flex;gap:10px;justify-content:center;margin-top:30px}
+.t-dots button{width:9px;height:9px;border-radius:50%;background:var(--line);transition:transform .3s,background .3s}
+.t-dots button.active{background:var(--gold);transform:scale(1.3)}
+
+/* ============================================================
+   15.  CONTACT
+   ============================================================ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px}
+.contact-info h2{font-size:clamp(2rem,4vw,2.7rem);margin-bottom:16px}
+.contact-info p{color:var(--ink-soft);margin-bottom:26px;max-width:46ch}
+.info-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;color:var(--ink)}
+.info-row .ic{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:#fff;border:1px solid var(--line)}
+.info-row .ic svg{width:20px;height:20px;stroke:var(--gold-deep)}
+.wa-btn{display:inline-flex;align-items:center;gap:12px;margin-top:16px;padding:15px 26px;border-radius:50px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-weight:600;box-shadow:0 10px 28px rgba(37,211,102,.25);transition:transform .25s var(--ease),box-shadow .3s}
+.wa-btn:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(37,211,102,.4)}
+.socials{display:flex;gap:12px;margin-top:28px}
+.socials a{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line);background:#fff;transition:all .3s var(--ease)}
+.socials a svg{width:20px;height:20px;fill:var(--gold-deep);transition:fill .3s}
+.socials a:hover{background:var(--grad-gold);transform:translateY(-4px);border-color:transparent}
+.socials a:hover svg{fill:#fff}
+
+.form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:0 8px 30px rgba(20,20,44,.06)}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.78rem;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:7px}
+.field input,.field textarea,.field select{
+  width:100%;padding:13px 15px;border-radius:var(--radius-sm);background:var(--surface);
+  border:1px solid var(--line);color:var(--ink);font-family:inherit;font-size:.94rem;
+  transition:border-color .3s,box-shadow .3s,background .3s;
+}
+.field input::placeholder,.field textarea::placeholder{color:#a7a4b8}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(201,168,76,.16)}
+.field textarea{resize:vertical;min-height:118px}
+.form .btn{width:100%;margin-top:4px}
+.form-note{font-size:.82rem;margin-top:13px;text-align:center;color:var(--gold-deep);min-height:1.2em}
+
+/* ============================================================
+   16.  FOOTER  (navy, cierre elegante)
+   ============================================================ */
+.footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding:58px 0 28px;text-align:center}
+.footer .brand{justify-content:center;margin-bottom:20px;font-size:1.55rem}
+.footer-nav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.footer-nav a{font-size:.88rem;color:rgba(255,255,255,.65);transition:color .3s}
+.footer-nav a:hover{color:var(--gold-light)}
+.footer .socials{justify-content:center}
+.footer .socials a{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.footer .socials a svg{fill:var(--gold-light)}
+.footer .socials a:hover{background:var(--grad-gold)}
+.footer .socials a:hover svg{fill:#fff}
+.footer-bottom{margin-top:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;color:rgba(255,255,255,.5)}
+
+/* ============================================================
+   17.  FLOATING BUTTONS
+   ============================================================ */
+.fab{position:fixed;right:24px;z-index:800;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 26px rgba(20,20,44,.2);transition:transform .3s var(--ease),opacity .4s,box-shadow .3s}
+.fab svg{width:25px;height:25px}
+.fab-wa{bottom:24px;background:linear-gradient(135deg,#25D366,#128C7E);animation:waPulse 2.6s ease-in-out infinite}
+.fab-wa svg{fill:#fff}
+.fab-wa:hover{transform:scale(1.1)}
+@keyframes waPulse{0%,100%{box-shadow:0 10px 26px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 10px 26px rgba(37,211,102,.35),0 0 0 14px rgba(37,211,102,0)}}
+.fab-top{bottom:90px;background:var(--grad-gold);opacity:0;visibility:hidden;pointer-events:none}
+.fab-top svg{stroke:#fff;fill:none;stroke-width:2.5}
+.fab-top.show{opacity:1;visibility:visible;pointer-events:auto}
+.fab-top:hover{transform:translateY(-4px)}
+
+/* Sweep dorado entre saltos */
+.sweep{position:fixed;inset:0;z-index:9000;background:var(--grad-gold);transform:translateX(-100%);pointer-events:none}
+.sweep.run{animation:sweepAcross 1s var(--ease)}
+@keyframes sweepAcross{0%{transform:translateX(-100%)}50%{transform:translateX(0)}100%{transform:translateX(100%)}}
+
+/* ============================================================
+   18.  RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .nav-links,.nav .nav-cta{display:none}
+  .hamburger{display:flex}
+  .portfolio-grid,.pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .about-visual{min-height:230px}
+}
+@media (max-width:640px){
+  .portfolio-grid,.pkg-grid{grid-template-columns:1fr}
+  .flip{max-width:100%}
+  .hero-ctas{flex-direction:column;width:100%;max-width:300px;margin-inline:auto}
+  .hero-ctas .btn{width:100%}
+  .counters{gap:24px;justify-content:center;text-align:center;width:100%}
+  .marquee span{font-size:1.15rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Defs reutilizables (degradado dorado) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAC775"/>
+      <stop offset="0.55" stop-color="#C9A84C"/>
+      <stop offset="1" stop-color="#a8862f"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- Marca "A" de ALEXIUM (placeholder — reemplazar por logo real) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logoA" viewBox="0 0 100 100">
+    <path d="M50 10 C45 28 28 64 13 91 C12 94 16 96 21 94 C24 92 26 88 28 84 C36 67 43 52 50 40 C57 52 64 67 72 84 C74 88 76 92 79 94 C84 96 88 94 87 91 C72 64 55 28 50 10 Z M33 68 L67 68 L62 59 L38 59 Z"/>
+  </symbol>
+</svg>
+
+<!-- ============================ LOADER ============================ -->
+<div id="loader" aria-hidden="true">
+  <svg class="loader-A" viewBox="0 0 100 100"><use href="#logoA"/></svg>
+</div>
+
+<!-- ===================== CURSOR ===================== -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- ===================== SWEEP ===================== -->
+<div class="sweep"></div>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#inicio" class="brand magnetic" aria-label="ALEXIUM inicio">
+      <!-- SWAP: reemplaza este <svg> por <img src="logo.png" alt="ALEXIUM"> -->
+      <svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg>
+      <span>ALEXIUM</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-outline nav-cta magnetic">Cotizar Proyecto</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#portafolio">Portafolio</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#paquetes">Paquetes</a>
+  <a href="#contacto">Contacto</a>
+  <a href="#contacto" class="btn btn-gold">Cotizar Proyecto</a>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="inicio">
+  <canvas id="particles"></canvas>
+  <div class="shape s1" data-speed="0.22"></div>
+  <div class="shape s2" data-speed="0.35"></div>
+  <div class="shape s3" data-speed="0.16"></div>
+
+  <div class="hero-content">
+    <!-- HERO LOGO VIDEO — SWAP: descomenta el <video> y borra el placeholder
+         <video autoplay loop muted playsinline>
+           <source src="logo.mp4" type="video/mp4">
+           <source src="logo.webm" type="video/webm">
+         </video> -->
+    <div class="hero-logo" data-speed="0.07">
+      <div class="logo-placeholder">
+        <svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg>
+      </div>
+    </div>
+
+    <h1 id="typed" data-text="Estudio creativo para marcas que se niegan a pasar desapercibidas"></h1>
+    <p class="sub">Logos · Web · Videos · Motion · Branding · UGC — Santiago, RD</p>
+    <div class="hero-ctas">
+      <a href="#portafolio" class="btn btn-gold magnetic">Ver Proyectos</a>
+      <a href="#contacto" class="btn btn-outline magnetic">Cotizar</a>
+    </div>
+  </div>
+
+  <a href="#servicios" class="scroll-cue" aria-label="Desplázate">
+    <span>Scroll</span><span class="arrow"></span>
+  </a>
+</section>
+
+<!-- ========================= MARQUEE ========================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>LOGOS</span><span class="dot">·</span><span>PÁGINAS WEB</span><span class="dot">·</span><span>VIDEOS</span><span class="dot">·</span><span>MOTION GRAPHICS</span><span class="dot">·</span><span>BRANDING</span><span class="dot">·</span><span>UGC</span><span class="dot">·</span><span>REELS</span><span class="dot">·</span><span>IDENTIDAD VISUAL</span><span class="dot">·</span>
+    <span>LOGOS</span><span class="dot">·</span><span>PÁGINAS WEB</span><span class="dot">·</span><span>VIDEOS</span><span class="dot">·</span><span>MOTION GRAPHICS</span><span class="dot">·</span><span>BRANDING</span><span class="dot">·</span><span>UGC</span><span class="dot">·</span><span>REELS</span><span class="dot">·</span><span>IDENTIDAD VISUAL</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ========================= SERVICES ========================= -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Lo que hacemos</span>
+      <h2 class="section-title">Nuestros Servicios<span class="title-underline"></span></h2>
+    </div>
+    <div class="services-grid reveal stagger">
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+          <h3>Identidad de Marca</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Identidad de Marca</h4>
+          <p>Sistemas visuales coherentes: logotipo, paleta, tipografía y voz. Una marca que se reconoce y se recuerda.</p>
+          <span class="tag">Estrategia · Logo · Manual</span>
+        </div>
+      </div></div>
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M7 22h10"/></svg></div>
+          <h3>Diseño Web</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Diseño Web</h4>
+          <p>Páginas web y landings rápidas, responsivas y elegantes. Tu marca online con la misma calidad premium.</p>
+          <span class="tag">Sitios · Landings · Responsive</span>
+        </div>
+      </div></div>
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2"/></svg></div>
+          <h3>Producción de Video</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Producción de Video</h4>
+          <p>De la idea al render final: guion, rodaje y edición cinematográfica para reels, anuncios y piezas de marca.</p>
+          <span class="tag">Reels · Ads · Corporativo</span>
+        </div>
+      </div></div>
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="19" cy="16" r="3"/></svg></div>
+          <h3>Motion Graphics</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Motion Graphics</h4>
+          <p>Animación que da vida a tu marca: intros, logos animados y piezas dinámicas para redes.</p>
+          <span class="tag">Animación · 2D · FX</span>
+        </div>
+      </div></div>
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>Contenido para Redes</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Contenido para Redes</h4>
+          <p>UGC y parrillas mensuales que convierten: contenido auténtico para Instagram, TikTok y más.</p>
+          <span class="tag">UGC · Parrillas · Social</span>
+        </div>
+      </div></div>
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5z"/></svg></div>
+          <h3>Diseño Visual</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Diseño Visual</h4>
+          <p>Piezas gráficas premium: posts, flyers, packaging y material impreso con acabado de lujo.</p>
+          <span class="tag">Gráfica · Print · Packaging</span>
+        </div>
+      </div></div>
+
+      <div class="flip"><div class="flip-inner">
+        <div class="flip-face flip-front">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>Branding Completo</h3>
+          <span class="hint">Hover para ver más</span>
+        </div>
+        <div class="flip-face flip-back">
+          <h4>Branding Completo</h4>
+          <p>El paquete integral: estrategia, identidad, web, contenido y video en una sola dirección creativa.</p>
+          <span class="tag">360° · All-in-one</span>
+        </div>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PORTFOLIO ========================= -->
+<section class="section alt" id="portafolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Trabajo seleccionado</span>
+      <h2 class="section-title">Portafolio<span class="title-underline"></span></h2>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="logos">Logos</button>
+      <button class="filter-btn" data-filter="videos">Videos</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+    </div>
+
+    <div class="portfolio-grid reveal stagger" id="portfolioGrid">
+      <!-- SWAP cada .ph por <img src="work1.jpg" loading="lazy" alt="..."> -->
+      <article class="work" data-cat="logos">
+        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <div class="overlay"><span class="cat">Logos</span><h3>Identidad Áurea</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
+      </article>
+      <article class="work" data-cat="videos">
+        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <div class="overlay"><span class="cat">Videos</span><h3>Reel de Campaña</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
+      </article>
+      <article class="work" data-cat="branding">
+        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <div class="overlay"><span class="cat">Branding</span><h3>Sistema Visual Noir</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
+      </article>
+      <article class="work" data-cat="branding">
+        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <div class="overlay"><span class="cat">Branding</span><h3>Rediseño Premium</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
+      </article>
+      <article class="work" data-cat="logos">
+        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <div class="overlay"><span class="cat">Logos</span><h3>Marca Monograma</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
+      </article>
+      <article class="work" data-cat="videos">
+        <div class="ph"><svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg></div>
+        <div class="overlay"><span class="cat">Videos</span><h3>Motion Reel 2026</h3><a href="#contacto" class="mini magnetic">Ver Proyecto</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= ABOUT ========================= -->
+<section class="section" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <svg class="about-A" viewBox="0 0 100 100"><use href="#logoA"/></svg>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Creatividad con <span class="text-gold">intención</span>.</h2>
+      <p>ALEXIUM es un estudio creativo nacido en Santiago, República Dominicana. Diseñamos marcas que se niegan a pasar desapercibidas — uniendo estrategia, estética de lujo y producción audiovisual de alto nivel.</p>
+      <p>Cada proyecto es una pieza única: minimalismo premium, atención obsesiva al detalle y una dirección creativa que eleva tu negocio.</p>
+      <div class="counters">
+        <div class="counter"><div class="num" data-target="50" data-suffix="+">0</div><div class="lbl">Proyectos</div></div>
+        <div class="counter"><div class="num" data-target="30" data-suffix="+">0</div><div class="lbl">Marcas</div></div>
+        <div class="counter"><div class="num" data-target="100" data-suffix="%">0</div><div class="lbl">Dedicación</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PACKAGES ========================= -->
+<section class="section alt" id="paquetes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Inversión</span>
+      <h2 class="section-title">Paquetes<span class="title-underline"></span></h2>
+    </div>
+    <div class="pkg-grid reveal stagger">
+
+      <div class="pkg">
+        <h3>Starter</h3>
+        <div class="price">$300<small> desde</small></div>
+        <ul>
+          <li>Diseño de logo principal</li>
+          <li>Paleta y tipografía</li>
+          <li>3 piezas para redes</li>
+          <li>Entrega en alta resolución</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline magnetic">Empezar</a>
+      </div>
+
+      <div class="pkg featured">
+        <h3>Growth</h3>
+        <div class="price">$600<small> desde</small></div>
+        <ul>
+          <li>Identidad de marca completa</li>
+          <li>Landing page / web básica</li>
+          <li>10 piezas para redes</li>
+          <li>1 video / reel animado</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="#contacto" class="btn btn-gold magnetic">Cotizar</a>
+      </div>
+
+      <div class="pkg">
+        <h3>Premium</h3>
+        <div class="price">$1,200<small> desde</small></div>
+        <ul>
+          <li>Branding 360° completo</li>
+          <li>Sitio web profesional</li>
+          <li>Producción de video + motion</li>
+          <li>Parrilla mensual de contenido</li>
+          <li>Dirección creativa dedicada</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline magnetic">Hablemos</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TESTIMONIALS ========================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Lo que dicen</span>
+      <h2 class="section-title">Testimonios<span class="title-underline"></span></h2>
+    </div>
+    <div class="t-viewport reveal" id="tCarousel">
+      <div class="t-card active">
+        <div class="quote">“</div>
+        <p>Transformaron nuestra marca por completo. El nivel de detalle y la estética premium superaron cada expectativa.</p>
+        <div class="who">María Fernández</div>
+        <div class="role">Fundadora · Atelier MF</div>
+      </div>
+      <div class="t-card">
+        <div class="quote">“</div>
+        <p>Profesionalismo absoluto. Los videos y el motion graphics elevaron nuestra presencia en redes a otro nivel.</p>
+        <div class="who">Carlos Jiménez</div>
+        <div class="role">CEO · Núcleo Studio</div>
+      </div>
+      <div class="t-card">
+        <div class="quote">“</div>
+        <p>ALEXIUM entiende el lujo. Cada pieza se siente cuidada, intencional y a la altura de marcas internacionales.</p>
+        <div class="who">Laura Peña</div>
+        <div class="role">Directora · Casa Peña</div>
+      </div>
+    </div>
+    <div class="t-dots" id="tDots"></div>
+  </div>
+</section>
+
+<!-- ========================= CONTACT ========================= -->
+<section class="section alt" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Hablemos</span>
+      <h2>Llevemos tu marca <span class="text-gold">al siguiente nivel</span>.</h2>
+      <p>Cuéntanos sobre tu proyecto. Respondemos rápido y con propuestas a la medida.</p>
+
+      <div class="info-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></span>
+        <!-- EJEMPLO: reemplaza con tu correo real -->
+        <a href="mailto:contacto@alexium.com">contacto@alexium.com</a>
+      </div>
+      <div class="info-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+        <span>Santiago, República Dominicana</span>
+      </div>
+
+      <!-- WhatsApp — EJEMPLO: +1 809 555 0192. Reemplaza 18095550192 por tu número real. -->
+      <a class="wa-btn magnetic" href="https://wa.me/18095550192?text=Hola%20ALEXIUM,%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.9-1.6L.06 24zM6.6 20l.4.2a9.9 9.9 0 005 1.4A9.9 9.9 0 102.1 12a9.9 9.9 0 001.5 5.2l.3.4-1 3.6 3.7-1.2zM17.5 14.3c-.3-.1-1.7-.8-1.9-.9s-.4-.2-.6.1-.7.9-.8 1-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.3-.5a.6.6 0 000-.5c0-.2-.6-1.6-.9-2.1s-.4-.5-.6-.5h-.5a1 1 0 00-.7.3 3 3 0 00-1 2.2 5.3 5.3 0 001.1 2.8 12 12 0 004.6 4c.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3s.3-1.2.2-1.3-.2-.2-.5-.3z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+
+      <div class="socials">
+        <!-- SWAP href con tus URLs reales -->
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.2-8.3a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8a4.3 4.3 0 01-1-2.8h-3v12.1a2.5 2.5 0 11-2.5-2.5c.2 0 .5 0 .7.1v-3a5.5 5.5 0 105 5.5V8.7a7.3 7.3 0 004.3 1.4v-3a4.3 4.3 0 01-3.5-1.3z"/></svg></a>
+        <a href="#" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M8.4 7.2c.6 0 1.2.1 1.7.2.5.1.9.3 1.2.6.3.2.6.6.7 1 .2.4.2.9.2 1.4 0 .6-.1 1.1-.4 1.5-.3.4-.7.7-1.2 1 .8.2 1.3.6 1.7 1.1.4.5.5 1.2.5 1.9 0 .6-.1 1.1-.3 1.6-.2.4-.6.8-1 1.1-.4.3-.9.5-1.5.6-.5.1-1.1.2-1.7.2H2V7.2h6.4zm-.4 4.3c.5 0 .9-.1 1.2-.3.3-.2.4-.6.4-1 0-.3 0-.5-.1-.7-.1-.2-.3-.3-.4-.4-.2-.1-.4-.2-.6-.2-.2 0-.5-.1-.7-.1H4.8v2.7H8zm.2 4.6c.3 0 .5 0 .8-.1.2 0 .5-.1.6-.3.2-.1.3-.3.4-.5.1-.2.2-.5.2-.8 0-.6-.2-1-.5-1.3-.3-.3-.8-.4-1.4-.4H4.8v3.4h3.4zM21.5 9.3h-4.6V8.2h4.6v1.1z"/></svg></a>
+      </div>
+    </div>
+
+    <form class="form reveal" id="contactForm" novalidate>
+      <div class="field"><label for="name">Nombre</label><input id="name" name="name" type="text" placeholder="Tu nombre" required /></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="tu@correo.com" required /></div>
+      <div class="field"><label for="service">Servicio de interés</label>
+        <select id="service" name="service">
+          <option>Identidad de Marca</option>
+          <option>Diseño Web / Páginas Web</option>
+          <option>Producción de Video</option>
+          <option>Motion Graphics</option>
+          <option>Contenido para Redes</option>
+          <option>Diseño Visual</option>
+          <option>Branding Completo</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">Mensaje</label><textarea id="msg" name="msg" placeholder="Cuéntanos sobre tu proyecto..." required></textarea></div>
+      <button type="submit" class="btn btn-gold magnetic">Enviar Solicitud</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="footer">
+  <div class="container">
+    <a href="#inicio" class="brand">
+      <svg viewBox="0 0 100 100" fill="url(#goldGrad)"><use href="#logoA"/></svg>
+      <span>ALEXIUM</span>
+    </a>
+    <nav class="footer-nav">
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a>
+      <a href="#nosotros">Nosotros</a><a href="#paquetes">Paquetes</a><a href="#contacto">Contacto</a>
+    </nav>
+    <div class="socials">
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2z"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8a4.3 4.3 0 01-1-2.8h-3v12.1a2.5 2.5 0 11-2.5-2.5c.2 0 .5 0 .7.1v-3a5.5 5.5 0 105 5.5V8.7a7.3 7.3 0 004.3 1.4v-3a4.3 4.3 0 01-3.5-1.3z"/></svg></a>
+      <a href="#" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M8.4 7.2c.6 0 1.2.1 1.7.2.5.1.9.3 1.2.6.3.2.6.6.7 1 .2.4.2.9.2 1.4 0 .6-.1 1.1-.4 1.5-.3.4-.7.7-1.2 1 .8.2 1.3.6 1.7 1.1.4.5.5 1.2.5 1.9 0 .6-.1 1.1-.3 1.6-.2.4-.6.8-1 1.1-.4.3-.9.5-1.5.6-.5.1-1.1.2-1.7.2H2V7.2h6.4z"/></svg></a>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> <span class="text-gold">ALEXIUM</span> — Estudio Creativo · Santiago, RD. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<!-- ========================= FLOATING ========================= -->
+<!-- EJEMPLO: reemplaza 18095550192 por tu número real -->
+<a class="fab fab-wa" href="https://wa.me/18095550192?text=Hola%20ALEXIUM,%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.9-1.6L.06 24zM6.6 20l.4.2a9.9 9.9 0 005 1.4A9.9 9.9 0 102.1 12a9.9 9.9 0 001.5 5.2l.3.4-1 3.6 3.7-1.2zM17.5 14.3c-.3-.1-1.7-.8-1.9-.9s-.4-.2-.6.1-.7.9-.8 1-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.3-.5a.6.6 0 000-.5c0-.2-.6-1.6-.9-2.1s-.4-.5-.6-.5h-.5a1 1 0 00-.7.3 3 3 0 00-1 2.2 5.3 5.3 0 001.1 2.8 12 12 0 004.6 4c.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3s.3-1.2.2-1.3-.2-.2-.5-.3z"/></svg>
+</a>
+<button class="fab fab-top" id="backTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg>
+</button>
+
+<script>
+/* ============================================================
+   JAVASCRIPT  —  interacciones
+   ============================================================ */
+(function(){
+  "use strict";
+  const prefersReduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine=window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+
+  /* 1. LOADER */
+  window.addEventListener("load",()=>{
+    setTimeout(()=>{
+      document.getElementById("loader").classList.add("done");
+      startTyping();
+    }, prefersReduced?200:1700);
+  });
+
+  /* 2. CURSOR */
+  if(fine){
+    const dot=document.querySelector(".cursor-dot"),ring=document.querySelector(".cursor-ring");
+    let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;});
+    (function loop(){rx+=(mx-rx)*0.18;ry+=(my-ry)*0.18;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
+    document.querySelectorAll("a,button,.magnetic,.flip,.work,.filter-btn,.t-dots button").forEach(el=>{
+      el.addEventListener("mouseenter",()=>ring.classList.add("hover"));
+      el.addEventListener("mouseleave",()=>ring.classList.remove("hover"));
+    });
+  }
+
+  /* 3. MAGNETIC */
+  if(fine && !prefersReduced){
+    document.querySelectorAll(".magnetic").forEach(el=>{
+      const s=20;
+      el.addEventListener("mousemove",e=>{
+        const r=el.getBoundingClientRect();
+        const x=(e.clientX-r.left-r.width/2)/r.width, y=(e.clientY-r.top-r.height/2)/r.height;
+        el.style.transform=`translate(${x*s}px,${y*s}px)`;
+      });
+      el.addEventListener("mouseleave",()=>{el.style.transform="";});
+    });
+  }
+
+  /* 4. NAV scroll + active + mobile */
+  const nav=document.getElementById("nav");
+  const navLinks=document.querySelectorAll("#navLinks a");
+  const sections=[...document.querySelectorAll("section[id]")];
+  addEventListener("scroll",()=>{
+    nav.classList.toggle("scrolled",scrollY>40);
+    document.getElementById("backTop").classList.toggle("show",scrollY>300);
+    let cur="inicio";
+    for(const s of sections){if(scrollY>=s.offsetTop-140)cur=s.id;}
+    navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+cur));
+  },{passive:true});
+
+  const ham=document.getElementById("hamburger"),mobile=document.getElementById("mobileMenu");
+  function toggleMenu(open){
+    ham.classList.toggle("open",open);mobile.classList.toggle("open",open);
+    ham.setAttribute("aria-expanded",open);document.body.style.overflow=open?"hidden":"";
+  }
+  ham.addEventListener("click",()=>toggleMenu(!mobile.classList.contains("open")));
+  mobile.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>toggleMenu(false)));
+
+  /* 5. SWEEP + smooth scroll */
+  const sweep=document.querySelector(".sweep");
+  function runSweep(){if(prefersReduced)return;sweep.classList.remove("run");void sweep.offsetWidth;sweep.classList.add("run");}
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener("click",e=>{
+      const id=a.getAttribute("href");
+      if(id.length>1 && document.querySelector(id)){
+        e.preventDefault();runSweep();
+        setTimeout(()=>document.querySelector(id).scrollIntoView({behavior:prefersReduced?"auto":"smooth"}),prefersReduced?0:260);
+      }
+    });
+  });
+
+  /* 6. REVEAL */
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        en.target.classList.add("in");
+        if(en.target.querySelector("[data-target]"))runCounters(en.target);
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:0.18});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+  /* 7. COUNTERS */
+  function runCounters(scope){
+    scope.querySelectorAll("[data-target]").forEach(el=>{
+      const target=+el.dataset.target,suffix=el.dataset.suffix||"";
+      if(prefersReduced){el.textContent=target+suffix;return;}
+      const dur=1600,start=performance.now();
+      (function tick(now){
+        const p=Math.min((now-start)/dur,1),eased=1-Math.pow(1-p,3);
+        el.textContent=Math.round(eased*target)+suffix;
+        if(p<1)requestAnimationFrame(tick);
+      })(start);
+    });
+  }
+
+  /* 8. TYPING */
+  function startTyping(){
+    const el=document.getElementById("typed"),text=el.dataset.text;
+    if(prefersReduced){el.textContent=text;return;}
+    let i=0;el.innerHTML='<span class="typed-caret">|</span>';
+    (function type(){
+      if(i<=text.length){el.innerHTML=text.slice(0,i)+'<span class="typed-caret">|</span>';i++;setTimeout(type,38);}
+      else{setTimeout(()=>{el.innerHTML=text;},600);}
+    })();
+  }
+
+  /* 9. PORTFOLIO FILTER */
+  const filterBtns=document.querySelectorAll(".filter-btn"),works=document.querySelectorAll(".work");
+  filterBtns.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      filterBtns.forEach(b=>b.classList.remove("active"));btn.classList.add("active");
+      const f=btn.dataset.filter;
+      works.forEach(w=>w.classList.toggle("hide",!(f==="all"||w.dataset.cat===f)));
+    });
+  });
+
+  /* 10. TESTIMONIALS */
+  const tCards=document.querySelectorAll(".t-card"),tDots=document.getElementById("tDots");
+  let tIdx=0,tTimer;
+  tCards.forEach((_,i)=>{
+    const b=document.createElement("button");
+    if(i===0)b.classList.add("active");
+    b.addEventListener("click",()=>{goTo(i);resetTimer();});
+    tDots.appendChild(b);
+  });
+  const dotEls=tDots.querySelectorAll("button");
+  function goTo(i){
+    tCards[tIdx].classList.remove("active");dotEls[tIdx].classList.remove("active");
+    tIdx=i;tCards[tIdx].classList.add("active");dotEls[tIdx].classList.add("active");
+  }
+  function resetTimer(){clearInterval(tTimer);tTimer=setInterval(()=>goTo((tIdx+1)%tCards.length),5000);}
+  resetTimer();
+
+  /* 11. PARALLAX */
+  if(!prefersReduced){
+    const layers=document.querySelectorAll(".hero [data-speed]");
+    addEventListener("scroll",()=>{const y=scrollY;layers.forEach(l=>l.style.transform=`translateY(${y*+l.dataset.speed}px)`);},{passive:true});
+  }
+
+  /* 12. PARTICLES */
+  if(!prefersReduced){
+    const cv=document.getElementById("particles"),ctx=cv.getContext("2d");
+    let w,h,particles;
+    function size(){
+      const hero=cv.parentElement;w=cv.width=hero.offsetWidth;h=cv.height=hero.offsetHeight;
+      const count=Math.min(50,Math.floor(w/30));
+      particles=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+0.4,vx:(Math.random()-0.5)*0.22,vy:(Math.random()-0.5)*0.22,a:Math.random()*0.35+0.08}));
+    }
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      for(const p of particles){
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(201,168,76,${p.a})`;ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    size();draw();
+    let rT;addEventListener("resize",()=>{clearTimeout(rT);rT=setTimeout(size,200);});
+  }
+
+  /* 13. FORM */
+  const form=document.getElementById("contactForm");
+  form.addEventListener("submit",e=>{
+    e.preventDefault();
+    const note=document.getElementById("formNote");
+    if(!form.checkValidity()){note.textContent="Por favor completa los campos requeridos.";return;}
+    note.textContent="¡Gracias! Te contactaremos muy pronto. ✦";
+    form.reset();
+  });
+
+  /* 14. YEAR */
+  document.getElementById("year").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
