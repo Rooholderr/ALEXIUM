@@ -656,7 +656,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
   </div>
 
   <a href="#servicios" class="scroll-cue" aria-label="Desplázate">
-    <span>Scroll</span><span class="arrow"></span>
   </a>
 </section>
 
@@ -851,6 +850,11 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
     </div>
 
     <form class="form reveal" id="contactForm" novalidate>
+      <!-- Web3Forms: las solicitudes llegan a alexiumrd@gmail.com -->
+      <input type="hidden" name="access_key" value="57b74530-8f68-41a5-b933-5f2949df0aeb" />
+      <input type="hidden" name="subject" value="Nueva solicitud desde la web de ALEXIUM" />
+      <input type="hidden" name="from_name" value="Sitio web ALEXIUM" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
       <div class="field"><label for="name">Nombre</label><input id="name" name="name" type="text" placeholder="Tu nombre" required /></div>
       <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="tu@correo.com" required /></div>
       <div class="field"><label for="service">Servicio de interés</label>
@@ -1069,12 +1073,35 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
 
   /* 13. FORM */
   const form=document.getElementById("contactForm");
-  form.addEventListener("submit",e=>{
+  form.addEventListener("submit",async e=>{
     e.preventDefault();
     const note=document.getElementById("formNote");
     if(!form.checkValidity()){note.textContent="Por favor completa los campos requeridos.";return;}
-    note.textContent="¡Gracias! Te contactaremos muy pronto. ✦";
-    form.reset();
+    const btn=form.querySelector("button[type=submit]");
+    const btnText=btn.textContent;
+    btn.disabled=true;btn.textContent="Enviando...";
+    note.textContent="";
+    try{
+      const res=await fetch("https://api.web3forms.com/submit",{
+        method:"POST",
+        headers:{"Accept":"application/json"},
+        body:new FormData(form)
+      });
+      const data=await res.json();
+      if(data.success){
+        note.style.color="";
+        note.textContent="¡Gracias! Recibimos tu solicitud y te contactaremos muy pronto. ✦";
+        form.reset();
+      }else{
+        note.style.color="#c0392b";
+        note.textContent="No pudimos enviar tu mensaje. Escríbenos por WhatsApp o a alexiumrd@gmail.com.";
+      }
+    }catch(err){
+      note.style.color="#c0392b";
+      note.textContent="No pudimos enviar tu mensaje. Escríbenos por WhatsApp o a alexiumrd@gmail.com.";
+    }finally{
+      btn.disabled=false;btn.textContent=btnText;
+    }
   });
 
   /* 14. YEAR */
