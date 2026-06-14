@@ -1,7 +1,7 @@
 # ALEXIUM — Estudio Creativo
 
 Sitio web one-page para **ALEXIUM**, estudio creativo en Santiago, República Dominicana.
-Branding · Diseño Web · Producción de Video · Motion Graphics · Logos · Contenido para Redes (UGC).
+Branding · Diseño Web · Producción de Video · Motion · Logos · Contenido para Redes (UGC).
 
 ## Stack
 
