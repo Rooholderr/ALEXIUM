@@ -563,6 +563,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
   .portfolio-grid,.pkg-grid{grid-template-columns:1fr}
   .flip{max-width:100%}
   .flip-front .hint{display:none}
+  .flip-inner{transition:transform 1.15s var(--ease)}
   .hero-ctas{flex-direction:column;width:100%;max-width:300px;margin-inline:auto}
   .hero-ctas .btn{width:100%}
   .counters{gap:24px;justify-content:center;text-align:center;width:100%}
@@ -1011,13 +1012,14 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;let
   },{threshold:0.18});
   document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
-  /* 6b. FLIP EN MÓVIL: voltea cada tarjeta al entrar al viewport (>=50%) y la des-voltea al salir, en ambas direcciones */
+  /* 6b. FLIP EN MÓVIL: solo se voltea la tarjeta que cruza la banda central de la pantalla,
+        así van de una en una (las de abajo esperan su turno) y se des-voltean al salir, en ambas direcciones */
   if(window.matchMedia("(max-width:640px)").matches){
     const flipIO=new IntersectionObserver(entries=>{
       entries.forEach(en=>{
-        en.target.classList.toggle("flipped", en.intersectionRatio>=0.5);
+        en.target.classList.toggle("flipped", en.isIntersecting);
       });
-    },{threshold:[0,0.5,1]});
+    },{rootMargin:"-45% 0px -45% 0px",threshold:0});
     document.querySelectorAll(".flip").forEach(el=>flipIO.observe(el));
   }
 
